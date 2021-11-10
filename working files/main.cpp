@@ -12,7 +12,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    float cnt = 0;
     /*opening files*/
     custom::input Fin(argv[1]);
     custom::output Fout(argv[2]);
