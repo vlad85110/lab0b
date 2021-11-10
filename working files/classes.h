@@ -41,6 +41,6 @@ namespace custom {
         output(char* name);
         ~output();
         bool is_open();
-        void write(data base);
+        void write(const std::map<std::string,int> &base, float count_words);
     };
 }

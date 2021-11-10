@@ -36,13 +36,12 @@ namespace custom {
         return file.is_open();
     }
 
-    void output::write(data base) {
-        float cnt = base.get_count();
+    void output::write(const std::map<std::string, int> & base, float cnt) {
         std::vector <std::pair<std::string, int>> arr;
         arr.reserve((size_t)cnt);
 
         /*sorting words*/
-        for (const auto &elem : base.get_base())
+        for (const auto &elem : base)
             arr.emplace_back(elem);
         sort(arr.begin(), arr.end(), [] (const auto &x, const auto &y) {return x.second > y.second;});
         for (const auto &elem : arr)

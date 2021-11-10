@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     Fin.close();
 
     /*write output*/
-    Fout.write(base);
+    Fout.write(base.get_base(), base.get_count());
 
 
     return 0;
