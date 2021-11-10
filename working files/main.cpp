@@ -1,4 +1,4 @@
-#include "files.h"
+#include "classes.h"
 
 
 using namespace std;
@@ -12,27 +12,19 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-
-    map<string, int> base;
     float cnt = 0;
+    /*opening files*/
     custom::input Fin(argv[1]);
     custom::output Fout(argv[2]);
     if (!Fin.is_open() || !Fout.is_open()) {
         cout << "opening file error" << endl;
         return 1;
     }
-
-    Fin.read(base, &cnt);
-
-    /*sorting words*/
-    vector <pair<string, int>> arr;
-    arr.reserve((size_t)cnt);
-    for (const auto &elem: base)
-        arr.emplace_back(elem);
-    sort(arr.begin(), arr.end(), [] (const auto &x, const auto &y) {return x.second > y.second;});
+    custom::data base(Fin);
+    Fin.close();
 
     /*write output*/
-    Fout.write(arr, cnt);
+    Fout.write(base);
 
 
     return 0;
