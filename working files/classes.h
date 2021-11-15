@@ -16,7 +16,7 @@ namespace custom {
         std::map<std::string, int> base;
         float word_count;
     public:
-        data(input & file);
+        explicit data(input & file);
         const std::map<std::string, int> & get_base() const;
         const float get_count() const;
     };
@@ -26,7 +26,7 @@ namespace custom {
     private:
         std::ifstream  file;
     public:
-        input(char* name);
+        explicit input(char* name);
         bool is_open();
         bool eof ();
         void close ();
@@ -38,7 +38,7 @@ namespace custom {
     private:
         std::ofstream  file;
     public:
-        output(char* name);
+        explicit output(char* name);
         ~output();
         bool is_open();
         void write(const std::map<std::string,int> &base, float count_words);
