@@ -37,7 +37,7 @@ namespace custom {
     }
 
     void output::write(const std::map<std::string, int> & base, float cnt) {
-        std::vector <std::pair<std::string, int>> arr;
+        std::vector <std::pair<const std::string &, int>> arr;
         arr.reserve((size_t)cnt);
 
         /*sorting words*/
@@ -66,11 +66,11 @@ namespace custom {
         this->word_count = cnt;
     }
 
-    const std::map<std::string, int> &data::get_base() {
+    const std::map<std::string, int> &data::get_base() const {
         return this->base;
     }
 
-    float &data::get_count() {
+    const float data::get_count() const {
         return this->word_count;
     }
 }

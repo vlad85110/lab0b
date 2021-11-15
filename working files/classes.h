@@ -17,8 +17,8 @@ namespace custom {
         float word_count;
     public:
         data(input & file);
-        const std::map<std::string, int> &get_base();
-        float & get_count();
+        const std::map<std::string, int> & get_base() const;
+        const float get_count() const;
     };
 
     class input {
